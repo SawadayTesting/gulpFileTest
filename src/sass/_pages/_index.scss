@@ -1,0 +1,206 @@
+@charset "utf-8";
+/*Wrapper*/
+.ly_body_inner {
+	/*headerのfix用*/
+	position: relative;
+}
+/*----------------------
+	mv
+-----------------------*/
+.ly_mv {
+	margin-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@media screen and (max-width:#{$bp-sp}) {
+		background: url(../img/fv-bgi_sp@2x.jpg) center center / cover no-repeat;
+		position: relative;
+		padding-top: #{$h-header};
+		height: 100vh;
+	}
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		background: url(../img/fv-bgi@2x.jpg) center center / cover no-repeat;
+		position: static;
+		/* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+		padding-top: calc(50% + (#{$h-header} / 2));
+		width: 100%;
+		height: 0;
+	}
+	@media screen and (min-width:#{$bp-pc}) {
+		background: url(../img/fv-bgi@2x.jpg) center center / cover no-repeat;
+		position: static;
+		/* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+		padding-top: calc(50% + (#{$h-header} / 2));
+		width: 100%;
+		height: 0;
+	}
+	background-color: #1B1310;
+	&_titBox {
+		@media screen and (max-width:#{$bp-sp}) {
+			position: absolute;
+			top: calc((100vh - 100px) / 2);
+			/*41 / 375px*/
+			left: 10.933%;
+			/*300px / 375px*/
+			width: 80%;
+			height: 100px;
+		}
+		//&_titBox
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			position: static;
+			margin: -50% 30px 0 30px;
+			/*450/1440*/
+			width: 100%;
+			padding: 0 16px;
+			max-width: 450px;
+			height: 136px;
+		}
+		//&_titBox
+		@media screen and (min-width:#{$bp-pc}) {
+			position: static;
+			margin: -50% 30px 0 30px;
+			/*450/1440*/
+			width: 100%;
+			padding: 0 16px;
+			max-width: 450px;
+			height: 136px;
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid #fff;
+	}
+}
+.ly_contentsWrapper {
+	@media screen and (max-width:#{$bp-sp}) {
+		width: 100%;
+		padding: 0 15px;
+	}
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@media screen and (min-width:#{$bp-pc}) {
+		/*1030/1440*/
+		width: 71.5%;
+		margin: 0 auto;
+	}
+}
+/*----------------------
+	Service
+-----------------------*/
+@media screen and (min-width:#{$bp-pc}) {
+	.bl_service {
+		&_container {
+			display: flex;
+		}
+		&_copyContainer {
+			height: 100%;
+			max-height: 240px;
+			order: 1;
+			padding: 25px 0 17px 0;
+		}
+		&_copyContainer.bl_service_copyContainer02 {
+			/*copyContainerの打ち消し*/
+			order: -1;
+		}
+	}
+	.el_service {
+		&_img {
+			width: 100%;
+			min-width: 320px;
+			max-width: 480px;
+			height: 240px;
+		}
+	}
+}
+/*----------------------
+	News
+-----------------------*/
+.bl {
+	&_newsContainer {
+		@media screen and (min-width:#{$bp-pc}) {
+			display: flex;
+		}
+	}
+	&_newsBox {
+		border: 1px solid #000;
+		@media (prefers-color-scheme: dark) {
+			border: 1px solid #fff;
+		}
+	}
+}
+.el {
+	&_newsBox {
+		&_img {
+			width: 100%;
+			@media (prefers-color-scheme: dark) {
+				border-bottom: 1px solid #fff;
+			}
+			@media screen and (min-width:#{$bp-pc}) {
+				max-width: 320px;
+			}
+		}
+		&_copy {
+			padding: 1.625em 2em; //26px 32px 25px 34px
+		}
+	}
+}
+/*----------------------
+	contact
+-----------------------*/
+.ly_contact {
+	margin-bottom: 50px;
+	@media screen and (min-width:#{$bp-pc}) {
+		/*700/1440*/
+		width: 48.6%;
+		margin: 0 auto;
+	}
+}
+.el {
+	&_inputPart {
+		border: 2px solid #333;
+		margin-bottom: 25px;
+		width: 100%;
+	}
+	&_inputPart.el_inputPart__mb50 {
+		margin-bottom: 50px;
+	}
+	&_btn {
+		display: inline-block;
+		width: 200px;
+		max-width: 100%;
+		padding: 20px 10px;
+		background-color: #{$bgc-main};
+		box-shadow: 0 3px 6px rgba(0, 0, 0, .6);
+		border-radius: 200px;
+		color: #fff;
+		font-weight: bold;
+		font-size: 1.125em;
+		transition: .25s;
+	}
+	&_btn:focus, &_btn:hover {
+		background-color: #fff;
+		color: #{$bgc-main};
+	}
+}
+//----------------------
+//	ブラウザのダークモード時の設定
+//-----------------------
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #1B1310;
+		color: #fff;
+		transition: 1s;
+	}
+	.el {
+		&_inputPart, &_btn {
+			background-color: #ddd;
+			color: #000;
+			opacity: .875;
+		}
+		&_btn:focus, &_btn:hover {
+			opacity: .25;
+		}
+	}
+}

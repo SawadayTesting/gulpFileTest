@@ -1,0 +1,27 @@
+﻿<%# タイトルと概要だけ変数化してあります 適宜編集して下さい %>
+<%# パスは基本そのまま。下層ページを作る際に変更 値:".." %>
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="<%= meta.description %>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--検索避けの設定-->
+	<meta name="robots" content="noindex,nofollow">
+	<!--twitter card,ogp tag-->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="ユーザー名" />
+	<meta property="og:title" content="クリスタ中級編" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="記事のURL" />
+	<meta property="og:site_name" content="サイト名">
+	<meta property="og:image" content="画像URL" />
+	<meta property="og:description" content="クリスタ中級編を作ってみたよ" />
+	<%#Facebook用の記述%>
+	<meta property="fb:app_id" content="[app_id]" />
+	<title><%= meta.title %></title>
+	<link rel="stylesheet" href="<%= meta.path %>/css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap">
+	<script src="js/main.js" defer></script>
+</head>

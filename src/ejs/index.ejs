@@ -1,0 +1,28 @@
+﻿<%# meta.ejsにページの基本情報を指定 %>
+<%# index.htmlの下層フォルダに別ページを作る場合、pathの値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: 'クリスタ中級編',
+  description: 'クリスタの中級編です。',
+  path: '.'
+};
+%> <%- include('_meta/_meta',{meta:meta}) %>
+<body>
+<div class="ly_body_inner">
+	<%- include('ly_layout/header/_header') %>
+	<!-- /.header -->
+	<main class="ly_main">
+	<%- include('bl_block/_bl_swiperContainer') %>
+	<!--/.bl_swiperContainer-->
+		<div class="ly_contentsWrapper">
+		
+		
+		
+		</div>
+		<!-- /.ly_contentsWrapper -->
+	</main>
+	<%- include('ly_layout/footer/_footer') %>
+	<!-- /.footer -->
+</div>
+<!-- /.ly_body_inner -->
+</body>
+</html>

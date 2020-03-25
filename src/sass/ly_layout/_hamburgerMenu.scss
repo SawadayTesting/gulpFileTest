@@ -1,0 +1,100 @@
+/*---------------------
+	ハンバーガーメニュー
+----------------------*/
+#nav-drawer {
+	position: relative;
+}
+.nav-unshown {
+	/*チェックボックス等は非表示に*/
+	display: none;
+}
+#nav-open {
+	/*アイコンのスペース*/
+	display: inline-block;
+	width: 30px;
+	height: 22px;
+	vertical-align: middle;
+}
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+	position: absolute;
+	/*線の太さ*/
+	height: 2px;
+	/*長さ*/
+	width: 25px;
+	border-radius: 3px;
+	background: #fff;
+	display: block;
+	content: '';
+	cursor: pointer;
+}
+#nav-open span:before {
+	bottom: -8px;
+}
+#nav-open span:after {
+	bottom: -16px;
+}
+#nav-content {
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	background: #{$bgc-main};
+	/*滑らかに表示*/
+	transition: .3s ease-in-out;
+	-webkit-transform: translateX(-105%);
+	/*左に隠しておく*/
+	transform: translateX(-105%);
+}
+#nav-input:checked ~ #nav-close {
+	/*カバーを表示*/
+	display: block;
+	opacity: .5;
+}
+#nav-input:checked ~ #nav-content {
+	-webkit-transform: translateX(0%);
+	/*中身を表示（右へスライド）*/
+	transform: translateX(0%);
+	box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
+}
+.el_hamburgerClose {
+	margin: 30px 15px 0 calc(100% - 55px);
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	position: relative;
+	border: 2px solid rgba(0, 0, 0, .1);
+	cursor: pointer;
+	& span::before,
+	& span::after {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 84%;
+		height: 16%;
+		margin: -8% 0 0 -42%;
+		background: #fff;
+	}
+	& span::before {
+		transform: rotate(-45deg);
+	}
+	& span::after {
+		transform: rotate(45deg);
+	}
+}
+.bl_hamburger {
+	margin: 25vh auto;
+	width: 50vw;
+	height: calc(50vh - 55px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.el_hamburger_item {
+	font-size: 1em;
+}
