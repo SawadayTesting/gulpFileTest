@@ -44,7 +44,7 @@
     "npm": "^6.14.1",
     "npm-check-updates": "^4.0.2",
     "postcss-flexbugs-fixes": "^4.2.0",
-    "stylelint": "^13.2.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-wordpress": "^16.0.0"
   },
